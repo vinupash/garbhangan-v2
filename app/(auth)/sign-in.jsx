@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { ScreenWrapper } from '../../components'
 
 const Signin = () => {
     return (
-        <View>
-            <Text>Signin</Text>
-        </View>
+        <ScreenWrapper>
+            <View>
+                <Text>Signin</Text>
+            </View>
+        </ScreenWrapper>
     )
 }
 
