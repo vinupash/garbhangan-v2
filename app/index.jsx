@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, ImageBackground, Pressable } from "react-native";
 import { LottieWrapper, ScreenWrapper } from "../components";
 import { router } from "expo-router";
 import { hp, wp } from "../helpers/common";
@@ -25,8 +25,6 @@ const App = () => {
             speed={0.03}
           />
 
-          {/* <Text onPress={() => router.push("/(auth)/sign-in")} className="text-center">this is app page</Text> */}
-
           <LottieWrapper
             icon={icons.Logo}
             autoPlay={true}
@@ -42,18 +40,23 @@ const App = () => {
           <View style={{ width: wp(12), height: hp(15) }}></View>
         </View>
 
-        <View className="absolute bottom-28 right-60 justify-center items-center space-y-5">
-          <TouchableOpacity
+        <View className="absolute bottom-20 right-60 justify-center items-center space-y-5">
+          <Pressable
             onPress={() => router.push("/(auth)/sign-in")}
-            activeOpacity={0.8}
+            className="shadow-md shadow-neutral-400/70 rounded-full"
             style={{
-              borderWidth: 1,
               paddingVertical: 15,
-              paddingHorizontal: 35,
+              paddingHorizontal: 40,
+              backgroundColor: "#1e40af",
             }}
           >
-            <Text className="text-center font-semibold">login</Text>
-          </TouchableOpacity>
+            <Text
+              className="text-center font-semibold text-white"
+              style={{ fontSize: wp(1.4) }}
+            >
+              Log In
+            </Text>
+          </Pressable>
 
           <View className="flex flex-row space-x-2 items-center justify-center">
             <Text className="font-RobotoBold" style={{ fontSize: wp(1.4) }}>
