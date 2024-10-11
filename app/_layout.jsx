@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
+import { Platform } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -50,7 +51,10 @@ const RootLayout = () => {
           }}
         />
       </Stack>
-      <StatusBar style="light" backgroundColor="#1e40af" />
+      <StatusBar
+        style={Platform.OS === "ios" ? "dark" : "light"}
+        backgroundColor="#1e40af"
+      />
     </>
   );
 };

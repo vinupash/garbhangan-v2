@@ -4,6 +4,7 @@ import {
   ImageBackground,
   Pressable,
   ActivityIndicator,
+  Platform,
 } from "react-native";
 import { CustomInput, LottieWrapper, ScreenWrapper } from "../../components";
 import { router } from "expo-router";

@@ -1,34 +1,46 @@
 import { Stack } from "expo-router";
 
-const MainLayout = () => {
+const WomenLayout = () => {
   return (
     <Stack>
       <Stack.Screen
-        name="mainscreen"
+        name="women"
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="notificationscreen"
+        name="garbhasanskar"
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="(women)"
+        name="foodfitness"
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="(kid)"
+        name="growthchanges"
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="(doctor)"
+        name="listwomens"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="offlinelistwomens"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="offlinealllistwomens"
         options={{
           headerShown: false,
         }}
@@ -37,4 +49,4 @@ const MainLayout = () => {
   );
 };
 
-export default MainLayout;
+export default WomenLayout;
