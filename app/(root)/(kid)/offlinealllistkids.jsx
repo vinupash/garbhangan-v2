@@ -1,5 +1,5 @@
 import { ImageBackground, Text, Pressable, View } from "react-native";
-import { LottieWrapper, ScreenWrapper } from "../../../components";
+import { CopyRights, LottieWrapper, ScreenWrapper } from "../../../components";
 import { icons, posters } from "../../../constants";
 import { hp, wp } from "../../../helpers/common";
 import { SvgXml } from "react-native-svg";
