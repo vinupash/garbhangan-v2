@@ -9,6 +9,18 @@ const DoctorLayout = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="doctorvisit"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="listdoctorvisit"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 };

@@ -17,41 +17,46 @@ import { Video, ResizeMode } from "expo-av";
 import { hp, wp } from "../../../helpers/common";
 import { icons, posters, videos } from "../../../constants";
 import { SvgXml } from "react-native-svg";
-import { router } from "expo-router";
 // import { router } from "expo-router";
 
-const Doctor = () => {
+const DoctorVisit = () => {
   // video popup
-  const [isPromoVideo, setPromoVideo] = useState(false);
+  const [promoVideo, setPromoVideo] = useState(false);
   useEffect(() => {
-    const handlePopupVideo = () => {
-      setTimeout(() => {
-        setPromoVideo(false);
-      }, 7000);
-    };
     handlePopupVideo();
   }, []);
+  const handlePopupVideo = () => {
+    setTimeout(() => {
+      setPromoVideo(false);
+    }, 7000);
+  };
 
   // menu details
   const [isMainPageData] = useState([
     {
       id: 1,
-      title: "Doctor Visit",
-      sectionIcon: icons.Doctor,
-      pathName: "/(root)/(doctor)/doctorvisit",
+      title: "Women's",
+      sectionIcon: icons.Women,
+      pathName: "/(root)/(women)/women",
     },
     {
       id: 2,
-      title: "List of Doctor Visit",
-      sectionIcon: icons.DocterTwo,
-      pathName: "/(root)/(doctor)/listdoctorvisit",
+      title: "Kid's",
+      sectionIcon: icons.Kid,
+      pathName: "/(root)/(kid)/kid",
+    },
+    {
+      id: 3,
+      title: "Doctor",
+      sectionIcon: icons.Doctor,
+      pathName: "/(root)/(doctor)/doctor",
     },
   ]);
   return (
     <ScreenWrapper>
-      {isPromoVideo ? (
+      {promoVideo ? (
         <Video
-          source={videos.WelcomeVideo}
+          source={videos.KidVideo}
           shouldPlay={true}
           useNativeControls={false}
           resizeMode={ResizeMode.COVER}
@@ -72,13 +77,17 @@ const Doctor = () => {
             style={{ height: hp(20) }}
           >
             <View className="" style={{ width: hp(45), height: hp(12) }}>
-              <Pressable
-                className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
-                style={{ width: hp(10), height: hp(10) }}
-                onPress={() => router.back()}
-              >
-                <SvgXml xml={icons.Back} width={wp(2.5)} height={wp(2.5)} />
-              </Pressable>
+              <LottieWrapper
+                icon={icons.Logoicons}
+                autoPlay={true}
+                loop={true}
+                lottieStyle={{
+                  width: wp(5),
+                  height: hp(12),
+                }}
+                resizeMode={"contain"}
+                speed={0.03}
+              />
             </View>
             <View>
               <LottieWrapper
@@ -105,39 +114,7 @@ const Doctor = () => {
               </Pressable>
             </View>
           </View>
-          <View className="justify-start items-center flex-row mx-4 space-x-5">
-            {isMainPageData?.map((menudata) => {
-              return (
-                <Pressable
-                  key={menudata.id}
-                  onPress={() => router.push(menudata.pathName)}
-                  style={{ width: "32%", height: hp(60) }}
-                  className="rounded-2xl shadow-md shadow-neutral-400/70 bg-white flex-col justify-between"
-                >
-                  <View className="flex-1 justify-center items-center">
-                    <LottieWrapper
-                      icon={menudata.sectionIcon}
-                      autoPlay={true}
-                      loop={true}
-                      lottieStyle={{
-                        width: wp(30),
-                        height: hp(50),
-                      }}
-                      resizeMode={"contain"}
-                    />
-                  </View>
-                  <View className="justify-center items-center py-4 bg-blue-900 rounded-b-2xl">
-                    <Text
-                      className="font-RobotoBold text-white"
-                      style={{ fontSize: wp(1.6) }}
-                    >
-                      {menudata.title}
-                    </Text>
-                  </View>
-                </Pressable>
-              );
-            })}
-          </View>
+          <View className="justify-between items-center flex-row mx-4"></View>
           <View className="mx-4 text-center justify-center items-center pb-5">
             <CopyRights />
           </View>
@@ -147,6 +124,6 @@ const Doctor = () => {
   );
 };
 
-export default Doctor;
+export default DoctorVisit;
 
 const styles = StyleSheet.create({});

@@ -98,17 +98,13 @@ const Women = () => {
             style={{ height: hp(20) }}
           >
             <View className="" style={{ width: hp(45), height: hp(12) }}>
-              <LottieWrapper
-                icon={icons.Logoicons}
-                autoPlay={true}
-                loop={true}
-                lottieStyle={{
-                  width: wp(5),
-                  height: hp(12),
-                }}
-                resizeMode={"contain"}
-                speed={0.03}
-              />
+              <Pressable
+                className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
+                style={{ width: hp(10), height: hp(10) }}
+                onPress={() => router.back()}
+              >
+                <SvgXml xml={icons.Back} width={wp(2.5)} height={wp(2.5)} />
+              </Pressable>
             </View>
             <View>
               <LottieWrapper
