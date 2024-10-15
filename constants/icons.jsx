@@ -11,6 +11,7 @@ import WomenOne from "../assets/icons/Women.json";
 import WomenTow from "../assets/icons/leddy-1.json";
 import WomenThree from "../assets/icons/leddy.json";
 import DocterTwo from "../assets/icons/Docter2.json";
+import NoConnectionone from "../assets/icons/noconnectionone.json";
 import KidOne from "../assets/icons/Kid1.json";
 import KidTwo from "../assets/icons/Books.json";
 import KidThree from "../assets/icons/Kid2.json";
@@ -26,6 +27,7 @@ import WomenIcon from "../assets/icons/WomenIcon";
 import ChildIcon from "../assets/icons/ChildIcon";
 import AddUser from "../assets/icons/adduser";
 import BellIcon from "../assets/icons/bellicon";
+import HomeIcon from "../assets/icons/home";
 
 export default {
   Logoicons,
@@ -56,4 +58,6 @@ export default {
   ChildIcon,
   AddUser,
   BellIcon,
+  HomeIcon,
+  NoConnectionone,
 };

@@ -45,6 +45,12 @@ const WomenLayout = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="addwomen"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 };

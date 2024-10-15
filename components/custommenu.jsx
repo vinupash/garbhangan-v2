@@ -5,11 +5,20 @@ import { hp, wp } from "../helpers/common";
 import { SvgXml } from "react-native-svg";
 import { router } from "expo-router";
 
-const CustomMenuKid = () => {
+const CustomMenu = ({
+  title,
+  icon,
+  onPressNotification,
+  onPressStackChange,
+  onPressAddUser,
+  onPressLogout,
+  ...props
+}) => {
   return (
     <View
       className="mx-4 flex-row justify-between items-center"
       style={{ height: hp(20) }}
+      {...props}
     >
       <View className="" style={{ width: hp(45), height: hp(12) }}>
         <View className="space-x-5 items-center flex-row">
@@ -24,7 +33,7 @@ const CustomMenuKid = () => {
             className="text-white font-RobotoBold"
             style={{ fontSize: wp(3) }}
           >
-            Kid's
+            {title}
           </Text>
         </View>
       </View>
@@ -48,27 +57,31 @@ const CustomMenuKid = () => {
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
-          onPress={() => router.replace("/(root)/notificationscreen")}
+          // onPress={() => router.replace("/(root)/notificationscreen")}
+          onPress={onPressNotification}
         >
           <SvgXml xml={icons.BellIcon} width={wp(2.5)} height={wp(2.5)} />
         </Pressable>
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
-          onPress={() => router.replace("/(root)/(kid)/addkid")}
+          // onPress={() => router.replace("/(root)/(kid)/addkid")}
+          onPress={onPressAddUser}
         >
           <SvgXml xml={icons.AddUser} width={wp(2.5)} height={wp(2.5)} />
         </Pressable>
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
-          onPress={() => router.replace("/(root)/(women)/women")}
+          // onPress={() => router.replace("/(root)/(women)/women")}
+          onPress={onPressStackChange}
         >
-          <SvgXml xml={icons.WomenIcon} width={wp(2.5)} height={wp(2.5)} />
+          <SvgXml xml={icon} width={wp(2.5)} height={wp(2.5)} />
         </Pressable>
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
+          onPress={onPressLogout}
         >
           <SvgXml xml={icons.Logout} width={wp(2.5)} height={wp(2.5)} />
         </Pressable>
@@ -77,4 +90,4 @@ const CustomMenuKid = () => {
   );
 };
 
-export default CustomMenuKid;
+export default CustomMenu;

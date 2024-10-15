@@ -1,23 +1,18 @@
 import {
   ImageBackground,
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   View,
 } from "react-native";
 import React, { useState, useEffect } from "react";
-import {
-  CopyRights,
-  LottieWrapper,
-  PageMenu,
-  ScreenWrapper,
-} from "../../components";
+import { CopyRights, LottieWrapper, ScreenWrapper } from "../../components";
 import { Video, ResizeMode } from "expo-av";
 import { hp, wp } from "../../helpers/common";
-import { icons, posters, videos } from "../../constants";
-import { SvgXml } from "react-native-svg";
+import { posters, videos } from "../../constants";
 import { router } from "expo-router";
+import CustomMainMenu from "../../components/custommainmenu";
+import { mainmenudata } from "../../helpers/dummydata";
 
 const Mainscreen = () => {
   // video popup
@@ -31,27 +26,6 @@ const Mainscreen = () => {
     handlePopupVideo();
   }, []);
 
-  // menu details
-  const [isMainPageData] = useState([
-    {
-      id: 1,
-      title: "Women's",
-      sectionIcon: icons.Women,
-      pathName: "/(root)/(women)/women",
-    },
-    {
-      id: 2,
-      title: "Kid's",
-      sectionIcon: icons.Kid,
-      pathName: "/(root)/(kid)/kid",
-    },
-    {
-      id: 3,
-      title: "Doctor",
-      sectionIcon: icons.Doctor,
-      pathName: "/(root)/(doctor)/doctor",
-    },
-  ]);
   return (
     <ScreenWrapper>
       {isPromoVideo ? (
@@ -72,50 +46,9 @@ const Mainscreen = () => {
           resizeMode="cover"
           className="w-full h-full justify-between flex-col"
         >
-          <View
-            className="mx-4 flex-row justify-between items-center"
-            style={{ height: hp(20) }}
-          >
-            <View className="" style={{ width: hp(45), height: hp(12) }}>
-              <LottieWrapper
-                icon={icons.Logoicons}
-                autoPlay={true}
-                loop={true}
-                lottieStyle={{
-                  width: wp(5),
-                  height: hp(12),
-                }}
-                resizeMode={"contain"}
-                speed={0.03}
-              />
-            </View>
-            <View>
-              <LottieWrapper
-                icon={icons.Logo}
-                autoPlay={true}
-                loop={true}
-                lottieStyle={{
-                  width: wp(25),
-                  height: hp(22),
-                }}
-                resizeMode={"contain"}
-                speed={0.03}
-              />
-            </View>
-            <View
-              className="flex-row items-center justify-end"
-              style={{ width: hp(45), height: hp(12) }}
-            >
-              <Pressable
-                className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
-                style={{ width: hp(10), height: hp(10) }}
-              >
-                <SvgXml xml={icons.Logout} width={wp(2.5)} height={wp(2.5)} />
-              </Pressable>
-            </View>
-          </View>
+          <CustomMainMenu />
           <View className="justify-between items-center flex-row mx-4">
-            {isMainPageData?.map((menudata) => {
+            {mainmenudata?.map((menudata) => {
               return (
                 <Pressable
                   key={menudata.id}

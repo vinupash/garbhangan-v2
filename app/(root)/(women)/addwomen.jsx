@@ -1,10 +1,9 @@
 import { ImageBackground, Text, View } from "react-native";
 import { CopyRights, ScreenWrapper } from "../../../components";
 import { icons, posters } from "../../../constants";
-import { router } from "expo-router";
 import CustomMenu from "../../../components/custommenu";
 
-const OfflineListOfKids = () => {
+const AddWomen = () => {
   return (
     <ScreenWrapper>
       <ImageBackground
@@ -13,14 +12,14 @@ const OfflineListOfKids = () => {
         className="w-full h-full justify-between flex-col"
       >
         <CustomMenu
-          title={"Kid's"}
-          icon={icons.WomenIcon}
+          title={"women's"}
+          icon={icons.ChildIcon}
           onPressNotification={() => router.push("/(root)/notificationscreen")}
-          onPressAddUser={() => router.push("/(root)/(kid)/addkid")}
-          onPressStackChange={() => router.push("/(root)/(women)/women")}
+          onPressAddUser={() => router.push("/(root)/(women)/addwomen")}
+          onPressStackChange={() => router.push("/(root)/(kid)/kid")}
           onPressLogout={() => router.back()}
         />
-        <Text>OfflineListOfKids</Text>
+        <Text>AddWomen</Text>
         <View className="mx-4 text-center justify-center items-center pb-5">
           <CopyRights />
         </View>
@@ -29,4 +28,4 @@ const OfflineListOfKids = () => {
   );
 };
 
-export default OfflineListOfKids;
+export default AddWomen;

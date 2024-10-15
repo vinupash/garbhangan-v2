@@ -3,7 +3,8 @@ import LottieWrapper from "./lottiewrapper";
 import CustomInput from "./custominput";
 import CopyRights from "./copyrights";
 import PageMenu from "./pagemenu";
-// import CustomMenuKid from "./custommenukid";
+import PromoVideoWrapper from "./promovideowrapper";
+import NoInternet from "./nointernet";
 
 export {
   ScreenWrapper,
@@ -11,5 +12,6 @@ export {
   CustomInput,
   CopyRights,
   PageMenu,
-  // CustomMenuKid,
+  PromoVideoWrapper,
+  NoInternet,
 };
