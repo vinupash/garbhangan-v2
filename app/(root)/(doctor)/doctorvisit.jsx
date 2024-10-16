@@ -1,7 +1,7 @@
-import { ImageBackground, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import React from "react";
-import { NoInternet, ScreenWrapper } from "../../../components";
-import { icons, posters } from "../../../constants";
+import { BackgroudImage, NoInternet, ScreenWrapper } from "../../../components";
+import { icons } from "../../../constants";
 import CustomDoctorMenu from "../../../components/customdotormenu";
 import { useInternetStatus } from "../../../hooks";
 
@@ -9,11 +9,7 @@ const DoctorVisit = () => {
   const { isConnected } = useInternetStatus();
   return (
     <ScreenWrapper>
-      <ImageBackground
-        source={posters.park_element}
-        resizeMode="cover"
-        className="w-full h-full justify-between flex-col"
-      >
+      <BackgroudImage>
         <CustomDoctorMenu
           title={"Doctor"}
           icon={icons.WomenIcon}
@@ -29,7 +25,7 @@ const DoctorVisit = () => {
         {/* <View className="mx-4 text-center justify-center items-center pb-5">
           <CopyRights />
         </View> */}
-      </ImageBackground>
+      </BackgroudImage>
     </ScreenWrapper>
   );
 };

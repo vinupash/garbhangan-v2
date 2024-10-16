@@ -1,22 +1,16 @@
-import { ImageBackground, Text, View } from "react-native";
-import { CopyRights, ScreenWrapper } from "../../../components";
-import { posters, icons } from "../../../constants";
+import { Text, View } from "react-native";
+import { BackgroudImage, CopyRights, ScreenWrapper } from "../../../components";
+import { icons } from "../../../constants";
 import CustomMenu from "../../../components/custommenu";
-import NetInfo from "@react-native-community/netinfo";
-import { useEffect, useState } from "react";
 import { useInternetStatus } from "../../../hooks";
 import { router } from "expo-router";
 
 const GarbhaSanskar = () => {
   const { isConnected } = useInternetStatus();
-  console.log(isConnected);
+  // console.log(isConnected);
   return (
     <ScreenWrapper>
-      <ImageBackground
-        source={posters.park_element}
-        resizeMode="cover"
-        className="w-full h-full justify-between flex-col"
-      >
+      <BackgroudImage>
         <CustomMenu
           title={"women's"}
           icon={icons.ChildIcon}
@@ -29,7 +23,7 @@ const GarbhaSanskar = () => {
         <View className="mx-4 text-center justify-center items-center pb-5">
           <CopyRights />
         </View>
-      </ImageBackground>
+      </BackgroudImage>
     </ScreenWrapper>
   );
 };

@@ -1,16 +1,14 @@
-import {
-  ImageBackground,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-} from "react-native";
+import { Pressable, StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
-import { CopyRights, LottieWrapper, ScreenWrapper } from "../../../components";
-import { Video, ResizeMode } from "expo-av";
+import {
+  BackgroudImage,
+  CopyRights,
+  LottieWrapper,
+  PromoVideoWrapper,
+  ScreenWrapper,
+} from "../../../components";
 import { hp, wp } from "../../../helpers/common";
-import { icons, posters, videos } from "../../../constants";
+import { icons, videos } from "../../../constants";
 import { router } from "expo-router";
 import CustomMenu from "../../../components/custommenu";
 import { womenmenudata } from "../../../helpers/dummydata";
@@ -22,23 +20,9 @@ const Women = () => {
   return (
     <ScreenWrapper>
       {promoVideo ? (
-        <Video
-          source={videos.WomenVideo}
-          shouldPlay={true}
-          useNativeControls={false}
-          resizeMode={ResizeMode.COVER}
-          isLooping={false}
-          style={{
-            width: wp(100),
-            height: hp(100),
-          }}
-        />
+        <PromoVideoWrapper videosPath={videos.WomenVideo} />
       ) : (
-        <ImageBackground
-          source={posters.park_element}
-          resizeMode="cover"
-          className="w-full h-full justify-between flex-col"
-        >
+        <BackgroudImage>
           <CustomMenu
             title={"women's"}
             icon={icons.ChildIcon}
@@ -92,7 +76,7 @@ const Women = () => {
           <View className="mx-4 text-center justify-center items-center pb-5">
             <CopyRights />
           </View>
-        </ImageBackground>
+        </BackgroudImage>
       )}
     </ScreenWrapper>
   );

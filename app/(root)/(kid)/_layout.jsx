@@ -45,12 +45,12 @@ const KidLayout = () => {
           headerShown: false,
         }}
       />
-      {/* <Stack.Screen
-        name="kid"
+      <Stack.Screen
+        name="pdfview"
         options={{
           headerShown: false,
         }}
-      /> */}
+      />
     </Stack>
   );
 };

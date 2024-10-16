@@ -1,46 +1,25 @@
+import { FlatList, ImageBackground, Pressable, Text, View } from "react-native";
+import React from "react";
 import {
-  FlatList,
-  ImageBackground,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import React, { useState, useEffect } from "react";
-import { CopyRights, LottieWrapper, ScreenWrapper } from "../../../components";
-import { Video, ResizeMode } from "expo-av";
+  CopyRights,
+  LottieWrapper,
+  PromoVideoWrapper,
+  ScreenWrapper,
+} from "../../../components";
 import { hp, wp } from "../../../helpers/common";
 import { icons, posters, videos } from "../../../constants";
 import { router } from "expo-router";
 import CustomMenu from "../../../components/custommenu";
 import { kidmenudata } from "../../../helpers/dummydata";
+import { usePromoVideo } from "../../../hooks";
 
 const Kid = () => {
-  // video popup
-  const [promoVideo, setPromoVideo] = useState(false);
-  useEffect(() => {
-    handlePopupVideo();
-  }, []);
-  const handlePopupVideo = () => {
-    setTimeout(() => {
-      setPromoVideo(false);
-    }, 7000);
-  };
+  const { promoVideo } = usePromoVideo(7000);
 
   return (
     <ScreenWrapper>
       {promoVideo ? (
-        <Video
-          source={videos.KidVideo}
-          shouldPlay={true}
-          useNativeControls={false}
-          resizeMode={ResizeMode.COVER}
-          isLooping={false}
-          style={{
-            width: wp(100),
-            height: hp(100),
-          }}
-        />
+        <PromoVideoWrapper videosPath={videos.KidVideo} />
       ) : (
         <ImageBackground
           source={posters.park_element}

@@ -1,6 +1,7 @@
-import { ImageBackground, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import React from "react";
 import {
+  BackgroudImage,
   CopyRights,
   LottieWrapper,
   PromoVideoWrapper,
@@ -21,7 +22,7 @@ const Doctor = () => {
       {promoVideo ? (
         <PromoVideoWrapper videosPath={videos.DoctorVideo} />
       ) : (
-        <ImageBackground
+        <BackgroudImage
           source={posters.park_element}
           resizeMode="cover"
           className="w-full h-full justify-between flex-col"
@@ -73,7 +74,7 @@ const Doctor = () => {
           <View className="mx-4 text-center justify-center items-center pb-5">
             <CopyRights />
           </View>
-        </ImageBackground>
+        </BackgroudImage>
       )}
     </ScreenWrapper>
   );

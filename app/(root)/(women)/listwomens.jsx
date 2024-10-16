@@ -1,16 +1,12 @@
-import { Text, ImageBackground, View } from "react-native";
-import { ScreenWrapper, CopyRights } from "../../../components";
-import { posters, icons } from "../../../constants";
+import { Text, View } from "react-native";
+import { ScreenWrapper, CopyRights, BackgroudImage } from "../../../components";
+import { icons } from "../../../constants";
 import CustomMenu from "../../../components/custommenu";
 
 const ListOfWomens = () => {
   return (
     <ScreenWrapper>
-      <ImageBackground
-        source={posters.park_element}
-        resizeMode="cover"
-        className="w-full h-full justify-between flex-col"
-      >
+      <BackgroudImage>
         <CustomMenu
           title={"women's"}
           icon={icons.ChildIcon}
@@ -23,7 +19,7 @@ const ListOfWomens = () => {
         <View className="mx-4 text-center justify-center items-center pb-5">
           <CopyRights />
         </View>
-      </ImageBackground>
+      </BackgroudImage>
     </ScreenWrapper>
   );
 };

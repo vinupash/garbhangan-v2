@@ -93,6 +93,27 @@ const kidmenudata = [
   },
 ];
 
+const kideducationdata = [
+  {
+    id: 1,
+    title: "English",
+    sectionIcon: icons.KidOne,
+    pathName: "/(root)/(kid)/pdfview",
+  },
+  {
+    id: 2,
+    title: "मराठी",
+    sectionIcon: icons.KidTwo,
+    pathName: "/(root)/(kid)/books",
+  },
+  {
+    id: 3,
+    title: "हिंदी",
+    sectionIcon: icons.KidThree,
+    pathName: "/(root)/(kid)/listkids",
+  },
+];
+
 const doctormenudata = [
   {
     id: 1,
@@ -108,4 +129,44 @@ const doctormenudata = [
   },
 ];
 
-export { mainmenudata, womenmenudata, kidmenudata, doctormenudata };
+const doctorvisitdata = [
+  {
+    id: 1,
+    title: "Kid's Education",
+    sectionIcon: icons.KidOne,
+    pathName: "/(root)/(kid)/kideducation",
+  },
+  {
+    id: 2,
+    title: "Book's",
+    sectionIcon: icons.KidTwo,
+    pathName: "/(root)/(kid)/books",
+  },
+  {
+    id: 3,
+    title: "List of Kid's",
+    sectionIcon: icons.KidThree,
+    pathName: "/(root)/(kid)/listkids",
+  },
+  {
+    id: 4,
+    title: "Offline List of Kid's",
+    sectionIcon: icons.KidFour,
+    pathName: "/(root)/(kid)/offlinelistkids",
+  },
+  {
+    id: 5,
+    title: "All Offline List of Kid's",
+    sectionIcon: icons.KidFive,
+    pathName: "/(root)/(kid)/offlinealllistkids",
+  },
+];
+
+export {
+  mainmenudata,
+  womenmenudata,
+  kidmenudata,
+  kideducationdata,
+  doctormenudata,
+  doctorvisitdata,
+};

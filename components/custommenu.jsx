@@ -12,6 +12,7 @@ const CustomMenu = ({
   onPressStackChange,
   onPressAddUser,
   onPressLogout,
+  switchscreen = false,
   ...props
 }) => {
   return (
@@ -57,7 +58,6 @@ const CustomMenu = ({
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
-          // onPress={() => router.replace("/(root)/notificationscreen")}
           onPress={onPressNotification}
         >
           <SvgXml xml={icons.BellIcon} width={wp(2.5)} height={wp(2.5)} />
@@ -65,7 +65,6 @@ const CustomMenu = ({
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
-          // onPress={() => router.replace("/(root)/(kid)/addkid")}
           onPress={onPressAddUser}
         >
           <SvgXml xml={icons.AddUser} width={wp(2.5)} height={wp(2.5)} />
@@ -73,7 +72,6 @@ const CustomMenu = ({
         <Pressable
           className="rounded-full shadow-md shadow-neutral-400/70 bg-white justify-center items-center"
           style={{ width: hp(10), height: hp(10) }}
-          // onPress={() => router.replace("/(root)/(women)/women")}
           onPress={onPressStackChange}
         >
           <SvgXml xml={icon} width={wp(2.5)} height={wp(2.5)} />

@@ -5,6 +5,7 @@ import CopyRights from "./copyrights";
 import PageMenu from "./pagemenu";
 import PromoVideoWrapper from "./promovideowrapper";
 import NoInternet from "./nointernet";
+import BackgroudImage from "./backimage";
 
 export {
   ScreenWrapper,
@@ -14,4 +15,5 @@ export {
   PageMenu,
   PromoVideoWrapper,
   NoInternet,
+  BackgroudImage,
 };

@@ -1,17 +1,13 @@
-import { ImageBackground, Text, View } from "react-native";
-import { CopyRights, ScreenWrapper } from "../../../components";
-import { icons, posters } from "../../../constants";
+import { Text, View } from "react-native";
+import { BackgroudImage, CopyRights, ScreenWrapper } from "../../../components";
+import { icons } from "../../../constants";
 import { router } from "expo-router";
 import CustomMenu from "../../../components/custommenu";
 
 const OfflineAllListOfKids = () => {
   return (
     <ScreenWrapper>
-      <ImageBackground
-        source={posters.park_element}
-        resizeMode="cover"
-        className="w-full h-full justify-between flex-col"
-      >
+      <BackgroudImage>
         <CustomMenu
           title={"Kid's"}
           icon={icons.WomenIcon}
@@ -24,7 +20,7 @@ const OfflineAllListOfKids = () => {
         <View className="mx-4 text-center justify-center items-center pb-5">
           <CopyRights />
         </View>
-      </ImageBackground>
+      </BackgroudImage>
     </ScreenWrapper>
   );
 };
